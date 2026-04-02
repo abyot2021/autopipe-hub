@@ -84,7 +84,7 @@
           "@id": "#samtools"
         }
       ],
-      "version": "2.0.0"
+      "version": "1.0.0"
     },
     {
       "@id": "#author1",
@@ -151,5 +151,6 @@
       "encodingFormat": "text/plain",
       "name": "Combined off-target results"
     }
-  ]
+  ],
+  "version": "1.0.0"
 }
