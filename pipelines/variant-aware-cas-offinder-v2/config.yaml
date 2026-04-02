@@ -1,0 +1,47 @@
+# Variant-aware Cas-OFFinder v2 Configuration
+# ============================================
+
+# Path to the input VCF file (phased, single-sample)
+# Mounted at /input at runtime
+vcf_input: "/input/Sample.vcf.gz"
+
+# Directory containing the reference genome FASTA (+ .fai index)
+reference_dir: "/input/human38/"
+
+# Reference genome FASTA filename (inside reference_dir)
+reference_fasta: "Homo_sapiens.GRCh38.dna.primary_assembly.fa"
+
+# Path to the cas-offinder query input file (PAM + target sequences)
+# Format: first line = FASTA path (replaced per-file), then PAM line, then targets
+query_input: "/input/input.txt"
+
+# Device ID for cas-offinder: C for CPU, G for GPU, G0 for GPU device 0
+device_id: "C"
+
+# Chromosomes to process (must match #CHROM names in your VCF)
+# Use chr-prefix for UCSC naming, bare numbers for Ensembl naming
+chromosomes:
+  - "chr1"
+  - "chr2"
+  - "chr3"
+  - "chr4"
+  - "chr5"
+  - "chr6"
+  - "chr7"
+  - "chr8"
+  - "chr9"
+  - "chr10"
+  - "chr11"
+  - "chr12"
+  - "chr13"
+  - "chr14"
+  - "chr15"
+  - "chr16"
+  - "chr17"
+  - "chr18"
+  - "chr19"
+  - "chr20"
+  - "chr21"
+  - "chr22"
+  - "chrX"
+  - "chrY"

@@ -1,0 +1,155 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": [
+        "Dataset",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#author1"
+        },
+        {
+          "@id": "#author2"
+        }
+      ],
+      "dateCreated": "2026-04-02",
+      "description": "Variant-aware Cas-OFFinder pipeline (version 2) that identifies potential CRISPR off-target sites accounting for individual genetic variants. The pipeline normalizes a phased single-sample VCF using vcfallelicprimitives, bcftools norm, and vcfcreatemulti, splits by chromosome to avoid segfaults, generates allelic FASTA files with vcf2fasta, and runs cas-offinder per individual FASTA file.",
+      "input": [
+        {
+          "@id": "#input-vcf"
+        },
+        {
+          "@id": "#input-ref"
+        },
+        {
+          "@id": "#input-query"
+        }
+      ],
+      "isBasedOn": {
+        "@id": "https://github.com/pnucolab/variant-aware-cas-offinder/tree/version-2"
+      },
+      "keywords": [
+        "CRISPR",
+        "off-target",
+        "variant-aware",
+        "cas-offinder",
+        "VCF",
+        "vcf2fasta",
+        "genome editing",
+        "bioinformatics"
+      ],
+      "license": {
+        "@id": "https://spdx.org/licenses/AGPL-3.0-or-later"
+      },
+      "name": "variant-aware-cas-offinder-v2",
+      "output": [
+        {
+          "@id": "#output-offtarget"
+        }
+      ],
+      "programmingLanguage": {
+        "@id": "#snakemake"
+      },
+      "sdPublisher": {
+        "@id": "https://hub.autopipe.org"
+      },
+      "softwareRequirements": [
+        {
+          "@id": "#vcflib"
+        },
+        {
+          "@id": "#bcftools"
+        },
+        {
+          "@id": "#cas-offinder"
+        },
+        {
+          "@id": "#htslib"
+        },
+        {
+          "@id": "#samtools"
+        }
+      ],
+      "version": "2.0.0"
+    },
+    {
+      "@id": "#author1",
+      "@type": "Person",
+      "name": "Mekonnen Abyot Melkamu"
+    },
+    {
+      "@id": "#author2",
+      "@type": "Person",
+      "name": "Jeongbin Park"
+    },
+    {
+      "@id": "#snakemake",
+      "@type": "ComputerLanguage",
+      "name": "Snakemake",
+      "url": "https://snakemake.readthedocs.io"
+    },
+    {
+      "@id": "#vcflib",
+      "@type": "SoftwareApplication",
+      "name": "vcflib"
+    },
+    {
+      "@id": "#bcftools",
+      "@type": "SoftwareApplication",
+      "name": "bcftools"
+    },
+    {
+      "@id": "#cas-offinder",
+      "@type": "SoftwareApplication",
+      "name": "cas-offinder"
+    },
+    {
+      "@id": "#htslib",
+      "@type": "SoftwareApplication",
+      "name": "htslib"
+    },
+    {
+      "@id": "#samtools",
+      "@type": "SoftwareApplication",
+      "name": "samtools"
+    },
+    {
+      "@id": "#input-vcf",
+      "@type": "FormalParameter",
+      "encodingFormat": "application/gzip",
+      "name": "Phased single-sample VCF"
+    },
+    {
+      "@id": "#input-ref",
+      "@type": "FormalParameter",
+      "encodingFormat": "text/x-fasta",
+      "name": "Reference genome FASTA"
+    },
+    {
+      "@id": "#input-query",
+      "@type": "FormalParameter",
+      "encodingFormat": "text/plain",
+      "name": "Cas-OFFinder query input"
+    },
+    {
+      "@id": "#output-offtarget",
+      "@type": "FormalParameter",
+      "encodingFormat": "text/plain",
+      "name": "Combined off-target results"
+    }
+  ]
+}
